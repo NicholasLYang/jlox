@@ -21,6 +21,11 @@ public class AstPrinter
     }
     
     @Override
+    public String visitCallExpr(Expr.Call expr) {
+        return "Function";
+    }
+    
+    @Override
     public String visitLogicalExpr(Expr.Logical expr) {
         return parenthesize(expr.operator.lexeme, expr.left, expr.right);
     }
